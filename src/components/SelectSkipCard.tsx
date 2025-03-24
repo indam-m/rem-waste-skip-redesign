@@ -99,7 +99,8 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
       {description}
       <button
         className={`w-full py-2.5 md:py-3 px-4 rounded-md transition-all flex items-center justify-center space-x-2 text-white
-            ${selected ? 'bg-[#0037C1] hover:bg-[#002da1]' : 'bg-[#2A2A2A] hover:bg-[#3A3A3A] hover:border-[#0037C1]'}`}
+            ${selected ? 'bg-[#0037C1] hover:bg-[#002da1]' : 'bg-[#2A2A2A] hover:bg-[#3A3A3A] hover:border-[#0037C1]'}${disabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+        disabled={disabled}
       >
         <span>{selected ? selectedButtonWord : selectButtonWord}</span>
         {!selected && <ArrowRight className="w-4 h-4" />}

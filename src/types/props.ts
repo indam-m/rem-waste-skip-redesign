@@ -1,11 +1,13 @@
+import { FC } from 'react';
 import { SkipOption } from './skipType';
 import { StepOption } from './step';
+import { PermitCheckOption } from './permitCheck';
 
 export interface CheckboxProps {
   id: number;
   title: string;
   subtitle: string;
-  icon: React.ComponentType;
+  icon: FC<{ className: string }>;
   exampleList: string[];
   checked: boolean;
   onClick: () => void;
@@ -49,8 +51,15 @@ export interface MainContentProps extends BasicPropsWithChildren {
   title: string;
 }
 
+export interface PermitCheckCardProps {
+  option: PermitCheckOption;
+  selected: boolean;
+  onSelect: () => void;
+}
+
 export interface ProgressBarProps {
   progressSteps: StepOption[];
+  onClick: (step: number) => void;
 }
 
 export interface ProgressBarItemProps extends StepOption {

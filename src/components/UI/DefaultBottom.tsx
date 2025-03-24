@@ -10,7 +10,7 @@ const DefaultBottom: FC<DefaultBottomProps> = ({
   return (
     <div className="text-center space-x-4">
       <button
-        className="btn-secondary"
+        className={`btn-secondary${isBackDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
         disabled={isBackDisabled}
         onClick={onBack}
       >

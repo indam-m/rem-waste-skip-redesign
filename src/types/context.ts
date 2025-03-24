@@ -4,6 +4,7 @@ export interface WasteInput {
   selectedSkipID: number;
   selectedSkipObj: SkipOption;
   selectedWasteTypes: number[];
+  selectedPermitCheck: number;
 }
 
 export interface GeneralContextInterface {

@@ -84,6 +84,7 @@ const WasteType: FC<DefaultContentProps> = ({
         ))}
       </div>
       <DefaultBottom
+        isBackDisabled={true} // disable back button of Waste Type for this coding challenge
         isContinueDisabled={!generalCtx.wasteInput.selectedWasteTypes?.length}
         onBack={handleBack}
         onContinue={handleContinue}

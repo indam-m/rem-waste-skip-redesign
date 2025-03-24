@@ -9,6 +9,7 @@ const initialValue: GeneralContextInterface = {
     selectedSkipID: 0,
     selectedSkipObj: {} as SkipOption,
     selectedWasteTypes: [],
+    selectedPermitCheck: 0,
   } as WasteInput,
   currentStep: DEFAULT_STEP,
   loading: false,

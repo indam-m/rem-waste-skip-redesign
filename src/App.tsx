@@ -9,6 +9,7 @@ import {
 import { useGeneralContext } from './contexts/GeneralContext';
 import WasteType from './components/WasteType';
 import SelectSkip from './components/SelectSkip';
+import PermitCheck from './components/PermitCheck';
 
 const App = () => {
   // context
@@ -21,6 +22,8 @@ const App = () => {
         return <WasteType onBack={handleBack} onContinue={handleContinue} />;
       case StepEnum.STEP_SELECT_SKIP:
         return <SelectSkip onBack={handleBack} onContinue={handleContinue} />;
+      case StepEnum.STEP_PERMIT_CHECK:
+        return <PermitCheck onBack={handleBack} onContinue={handleContinue} />;
       default:
         return undefined;
     }
@@ -37,6 +40,12 @@ const App = () => {
     }
     generalCtx.setCurrentStep(generalCtx.currentStep + 1);
   };
+  const handleClickProgress = (step: number) => {
+    if (step < MIN_STEP_ALLOWED || step > MAX_STEP_ALLOWED) {
+      return;
+    }
+    generalCtx.setCurrentStep(step);
+  };
 
   // states
   const [currentContent, setCurrentContent] = useState(
@@ -51,7 +60,10 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#121212] text-white">
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <ProgressBar progressSteps={STEP_OPTIONS} />
+        <ProgressBar
+          progressSteps={STEP_OPTIONS}
+          onClick={handleClickProgress}
+        />
         {currentContent}
       </main>
     </div>
