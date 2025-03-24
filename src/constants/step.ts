@@ -19,6 +19,10 @@ export enum StepEnum {
   STEP_PAYMENT,
 }
 
+export const DEFAULT_STEP = StepEnum.STEP_SELECT_SKIP;
+export const MAX_STEP_ALLOWED = StepEnum.STEP_PERMIT_CHECK;
+export const MIN_STEP_ALLOWED = StepEnum.STEP_WASTE_TYPE;
+
 export const STEP_OPTIONS: StepOption[] = [
   { id: StepEnum.STEP_POST_CODE, name: 'Post Code', icon: MapPin },
   { id: StepEnum.STEP_WASTE_TYPE, name: 'Waste Type', icon: Trash2 },

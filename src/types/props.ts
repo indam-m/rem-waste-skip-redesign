@@ -1,3 +1,4 @@
+import { SkipOption } from './skipType';
 import { StepOption } from './step';
 
 export interface CheckboxProps {
@@ -26,24 +27,45 @@ export interface DefaultContentProps {
   onContinue: () => void;
 }
 
+export interface ErrorCardProps {
+  error: Error | string;
+  onTryAgain: () => void;
+}
+
+export interface FixedBottomProps
+  extends DefaultBottomProps,
+    BasicPropsWithChildren {}
+
 export interface InfoCardProps {
   title: string;
   description: string | string[];
   icon?: React.ComponentType;
 }
 
-export interface MainContentProps {
+export interface MainContentProps extends BasicPropsWithChildren {
+  className?: string;
   title: string;
-  children: React.ReactNode;
 }
 
 export interface ProgressBarProps {
   progressSteps: StepOption[];
-  currentStep: number;
 }
 
 export interface ProgressBarItemProps extends StepOption {
   onClick: () => void;
   step: number;
-  currentStep: number;
+}
+
+export interface BasicPropsWithChildren {
+  children: React.ReactNode;
+}
+
+export interface SelectSkipCardProps {
+  skipOption: SkipOption;
+  selected: boolean;
+  disabled?: boolean;
+  image?: string;
+  selectedButtonWord?: string;
+  selectButtonWord?: string;
+  onSelect: () => void;
 }

@@ -1,38 +1,55 @@
-import { useState } from 'react';
 import ProgressBar from './components/Progress/ProgressBar';
-import { StepEnum, STEP_OPTIONS } from './constants/step';
+import {
+  MAX_STEP_ALLOWED,
+  MIN_STEP_ALLOWED,
+  StepEnum,
+  STEP_OPTIONS,
+} from './constants/step';
+import { GeneralProvider, useGeneralContext } from './contexts/GeneralContext';
 import WasteType from './components/WasteType';
+import SelectSkip from './components/SelectSkip';
 
 const App = () => {
-  const [currentStep, setCurrentStep] = useState(2 as StepEnum);
+  // context
+  const generalCtx = useGeneralContext();
 
   // functions
   const getContent = (step: StepEnum) => {
     switch (step) {
       case StepEnum.STEP_WASTE_TYPE:
         return <WasteType onBack={handleBack} onContinue={handleContinue} />;
+      case StepEnum.STEP_SELECT_SKIP:
+        return <SelectSkip onBack={handleBack} onContinue={handleContinue} />;
       default:
         return undefined;
     }
   };
   const handleBack = () => {
-    setCurrentStep((prevStep) => prevStep - 1);
-    currentContent = getContent(currentStep);
+    if (generalCtx.currentStep === MIN_STEP_ALLOWED) {
+      return;
+    }
+    generalCtx.setCurrentStep(generalCtx.currentStep - 1);
+    currentContent = getContent(generalCtx.currentStep);
   };
   const handleContinue = () => {
-    setCurrentStep((prevStep) => prevStep + 1);
-    currentContent = getContent(currentStep);
+    if (generalCtx.currentStep === MAX_STEP_ALLOWED) {
+      return;
+    }
+    generalCtx.setCurrentStep(generalCtx.currentStep + 1);
+    currentContent = getContent(generalCtx.currentStep);
   };
 
-  let currentContent = getContent(currentStep);
+  let currentContent = getContent(generalCtx.currentStep);
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <ProgressBar currentStep={currentStep} progressSteps={STEP_OPTIONS} />
-        {currentContent}
-      </main>
-    </div>
+    <GeneralProvider>
+      <div className="min-h-screen bg-[#121212] text-white">
+        <main className="max-w-7xl mx-auto px-4 py-8">
+          <ProgressBar progressSteps={STEP_OPTIONS} />
+          {currentContent}
+        </main>
+      </div>
+    </GeneralProvider>
   );
 };
 

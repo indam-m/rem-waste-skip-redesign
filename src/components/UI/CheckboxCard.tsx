@@ -25,13 +25,11 @@ const CheckBoxCard: FC<CheckboxProps> = ({
       onClick={onClick}
     >
       <div className="absolute top-4 right-4">
-        {!checked && (
-          <div
-            className={`w-5 h-5 border-2 rounded ${checked ? 'flex items-center justify-center bg-[#0037C1] border-[#0037C1]' : 'border-[#2A2A2A]'}`}
-          >
-            {checked && <Check />}
-          </div>
-        )}
+        <div
+          className={`w-5 h-5 border-2 rounded ${checked ? 'flex items-center justify-center bg-[#0037C1] border-[#0037C1]' : 'border-[#2A2A2A]'}`}
+        >
+          {checked && <Check />}
+        </div>
       </div>
       <div className="flex items-start space-x-4">
         <div

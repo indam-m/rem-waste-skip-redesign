@@ -6,7 +6,7 @@ import {
 } from '../constants/wasteType';
 import { DefaultContentProps } from '../types/props';
 import CheckBoxCard from './UI/CheckboxCard';
-import DefaultBottom from './DefaultBottom';
+import DefaultBottom from './UI/DefaultBottom';
 import InfoCard from './UI/InfoCard';
 import MainContent from './UI/MainContent';
 
@@ -46,7 +46,7 @@ const WasteType: FC<DefaultContentProps> = ({
   //   checkContinueDisabled();
 
   return (
-    <MainContent title={WASTE_TYPE_INFO.title}>
+    <MainContent className="max-w-5xl mx-auto" title={WASTE_TYPE_INFO.title}>
       <InfoCard
         title={WASTE_TYPE_INFO.title}
         description={WASTE_TYPE_INFO.description}
