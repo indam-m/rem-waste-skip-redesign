@@ -1,6 +1,7 @@
 import { FC, JSX, useState } from 'react';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { PERMIT_CHECK_LIST } from '../constants/permitCheck';
+import ContentTitle from './UI/ContentTitle';
 import PermitCheckCard from './PermitCheckCard';
 import { DefaultContentProps } from '../types/props';
 
@@ -25,9 +26,7 @@ const PermitCheck: FC<DefaultContentProps> = ({
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-center mb-3">
-          Where will the skip be placed?
-        </h2>
+        <ContentTitle title="Where will the skip be placed?" />
         <p className="text-gray-400 text-center">
           This helps us determine if you need a permit for your skip
         </p>

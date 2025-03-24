@@ -35,7 +35,7 @@ const CheckBoxCard: FC<CheckboxProps> = ({
         <div
           className={`p-3 rounded-full bg-[#1C1C1C] border border-[#2A2A2A] ${checked ? 'text-[#0037C1]' : 'text-gray-400'}`}
         >
-          {Icon && <Icon />}
+          {Icon && <Icon className="w-6 h-6" />}
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-2">{title}</h3>

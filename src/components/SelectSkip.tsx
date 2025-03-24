@@ -4,6 +4,7 @@ import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
 import { SkipOption } from '../types/skipType';
 import { useFetchSkips } from '../hooks/useFetchSkips';
+import ContentTitle from './UI/ContentTitle';
 import ErrorCard from './UI/ErrorCard';
 import LoadingCircle from './UI/LoadingCircle';
 import SelectSkipCard from './SelectSkipCard';
@@ -49,12 +50,16 @@ const SelectSkip: FC<DefaultContentProps> = ({
   const smallViewChildren = (
     <>
       <h3 className="font-medium"></h3>
-      <div>
+      <div className="flex items-center gap-6">
+        <span className="text-sm font-bold text-gray-400 mr-2">
+          {generalCtx.wasteInput.selectedSkipObj.size}-Yard Skip
+        </span>
+        <span className="text-sm font-bold text-gray-400 ml-2">
+          {generalCtx.wasteInput.selectedSkipObj.hire_period_days}-day hire
+        </span>
         <span className="text-xl font-bold text-[#0037C1]">
           {generalCtx.currency}
-        </span>
-        <span className="text-sm text-gray-400 ml-2">
-          {generalCtx.wasteInput.selectedSkipObj.hire_period_days} days
+          {generalCtx.wasteInput.selectedSkipObj.price_before_vat}
         </span>
       </div>
     </>
@@ -62,9 +67,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 pb-32">
-      <h2 className="text-2xl font-bold text-center mb-4">
-        Choose Your Skip Size
-      </h2>
+      <ContentTitle title="Choose Your Skip Size" />
       <p className="text-gray-400 text-center mb-8">
         Select the skip size that best suits your needs
       </p>
@@ -89,16 +92,17 @@ const SelectSkip: FC<DefaultContentProps> = ({
           onContinue={onContinue}
         >
           <div className="flex items-center gap-6">
-            <p className="text-sm text-gray-400">
-              {generalCtx.wasteInput.selectedSkipObj.size}
+            <p className="text-base font-semibold text-gray-400">
+              {generalCtx.wasteInput.selectedSkipObj.size}-Yard Skip
             </p>
           </div>
-          <div>
+          <div className="flex items-center gap-6">
+            <span className="text-base font-semibold text-gray-400 ml-2">
+              {generalCtx.wasteInput.selectedSkipObj.hire_period_days}-day hire
+            </span>
             <span className="text-2xl font-bold text-[#0037C1]">
               {generalCtx.currency}
-            </span>
-            <span className="text-sm text-gray-400 ml-2">
-              {generalCtx.wasteInput.selectedSkipObj.hire_period_days} day hire
+              {generalCtx.wasteInput.selectedSkipObj.price_before_vat}
             </span>
           </div>
         </FixedBottom>

@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { FC, JSX } from 'react';
 import { FixedBottomProps } from '../../types/props';
 
@@ -38,10 +38,11 @@ const FixedBottom: FC<FixedBottomProps> = ({
           <div className="flex items-center gap-6">{children}</div>
           <div className="flex items-center gap-4">
             <button
-              className="btn-secondary"
+              className="btn-secondary flex items-center gap-2"
               disabled={isBackDisabled}
               onClick={onBack}
             >
+              <ArrowLeft className="w-4 h-4" />
               Back
             </button>
             <button

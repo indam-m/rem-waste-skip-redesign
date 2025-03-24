@@ -7,6 +7,7 @@ import {
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
 import CheckBoxCard from './UI/CheckboxCard';
+import ContentTitle from './UI/ContentTitle';
 import DefaultBottom from './UI/DefaultBottom';
 import InfoCard from './UI/InfoCard';
 
@@ -60,9 +61,7 @@ const WasteType: FC<DefaultContentProps> = ({
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-8">
-        Which type of waste best describes what you are disposing of?
-      </h2>
+      <ContentTitle title="Which type of waste best describes what you are disposing of?" />
       <InfoCard
         title={WASTE_TYPE_INFO.title}
         description={WASTE_TYPE_INFO.description}
