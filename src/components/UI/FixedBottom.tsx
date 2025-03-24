@@ -38,7 +38,7 @@ const FixedBottom: FC<FixedBottomProps> = ({
           <div className="flex items-center gap-6">{children}</div>
           <div className="flex items-center gap-4">
             <button
-              className="btn-secondary flex items-center gap-2"
+              className="min-w-[120px] btn-secondary flex items-center gap-4"
               disabled={isBackDisabled}
               onClick={onBack}
             >
@@ -46,7 +46,7 @@ const FixedBottom: FC<FixedBottomProps> = ({
               Back
             </button>
             <button
-              className={`btn-primary flex items-center gap-2${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+              className={`min-w-[120px] btn-primary flex items-center gap-2${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
               disabled={isContinueDisabled}
               onClick={onContinue}
             >

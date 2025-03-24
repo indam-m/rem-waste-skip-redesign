@@ -10,14 +10,14 @@ const DefaultBottom: FC<DefaultBottomProps> = ({
   return (
     <div className="text-center space-x-4">
       <button
-        className={`btn-secondary${isBackDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+        className={`min-w-[120px] btn-secondary${isBackDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
         disabled={isBackDisabled}
         onClick={onBack}
       >
         Back
       </button>
       <button
-        className={`btn-primary${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+        className={`min-w-[120px] btn-primary${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
         disabled={isContinueDisabled}
         onClick={onContinue}
       >

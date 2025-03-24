@@ -4,6 +4,10 @@
 
 This project is a redesigned version of the “Skip Select” page provided by REM Waste (https://wewantwaste.co.uk/). The objective is to enhance the visual appearance and user experience while preserving the original functionality. This redesign focuses on writing clean, maintainable React code, improving UI/UX, and ensuring responsive design compatibility for both mobile and desktop browsers.
 
+### 🌐 Live Demo
+
+[Live Demo on Vercel](https://rem-waste-skip-redesign-pbwex27qv-indams-projects.vercel.app/)
+
 ---
 
 ## 💡 Technologies & Tools Used
