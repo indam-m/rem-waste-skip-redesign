@@ -3,9 +3,9 @@ import ProgressBar from './components/Progress/ProgressBar';
 import {
   MAX_STEP_ALLOWED,
   MIN_STEP_ALLOWED,
-  StepEnum,
   STEP_OPTIONS,
 } from './constants/step';
+import { StepEnum } from './types/enum';
 import { useGeneralContext } from './contexts/GeneralContext';
 import WasteType from './components/WasteType';
 import SelectSkip from './components/SelectSkip';

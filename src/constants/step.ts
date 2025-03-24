@@ -9,15 +9,7 @@ import {
   CreditCard,
 } from 'lucide-react';
 import { StepOption } from '../types/step';
-
-export enum StepEnum {
-  STEP_POST_CODE,
-  STEP_WASTE_TYPE,
-  STEP_SELECT_SKIP,
-  STEP_PERMIT_CHECK,
-  STEP_CHOOSE_DATE,
-  STEP_PAYMENT,
-}
+import { StepEnum } from '../types/enum';
 
 export const DEFAULT_STEP = StepEnum.STEP_SELECT_SKIP;
 export const MAX_STEP_ALLOWED = StepEnum.STEP_PERMIT_CHECK;

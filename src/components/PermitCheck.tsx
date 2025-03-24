@@ -28,7 +28,7 @@ const PermitCheck: FC<DefaultContentProps> = ({
       <div className="mb-6">
         <ContentTitle title="Where will the skip be placed?" />
         <p className="text-gray-400 text-center">
-          This helps us determine if you need a permit for your skip
+          This helps us determine if you need a permit for your skip.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

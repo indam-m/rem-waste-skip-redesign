@@ -1,11 +1,5 @@
 import { Home, Building2, Trees, Building } from 'lucide-react';
-
-export enum WasteTypeEnum {
-  HOUSEHOLD_WASTE = 1,
-  CONSTRUCTION_WASTE,
-  GARDEN_WASTE,
-  COMMERCIAL_WASTE,
-}
+import { WasteTypeEnum } from '../types/enum';
 
 export const WASTE_TYPE_INFO = {
   title:

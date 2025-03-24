@@ -1,9 +1,6 @@
 import { FC, JSX, useState } from 'react';
-import {
-  WasteTypeEnum,
-  WASTE_TYPE_INFO,
-  WASTE_TYPE_OPTIONS,
-} from '../constants/wasteType';
+import { WASTE_TYPE_INFO, WASTE_TYPE_OPTIONS } from '../constants/wasteType';
+import { WasteTypeEnum } from '../types/enum';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
 import CheckBoxCard from './UI/CheckboxCard';
