@@ -5,6 +5,7 @@ import { DefaultContentProps } from '../types/props';
 import { SkipOption } from '../types/skipType';
 import { useFetchSkips } from '../hooks/useFetchSkips';
 import ErrorCard from './UI/ErrorCard';
+import LoadingCircle from './UI/LoadingCircle';
 import SelectSkipCard from './SelectSkipCard';
 
 const SelectSkip: FC<DefaultContentProps> = ({
@@ -67,6 +68,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
       <p className="text-gray-400 text-center mb-8">
         Select the skip size that best suits your needs
       </p>
+      {isLoading && <LoadingCircle />}
       {!!error && (
         <ErrorCard
           error="Failed to load available skips for your location"
