@@ -50,7 +50,7 @@ This project is a redesigned version of the “Skip Select” page provided by R
 - **State Management:**
 
   - Local state handling using `useState` and `useReducer` where appropriate.
-  - Optional use of `useContext` for global state management like user input.
+  - Use of `useContext` for global state management like user input and current step.
 
 - **Data Fetching:**
 
