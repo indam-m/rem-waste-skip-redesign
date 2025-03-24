@@ -3,6 +3,8 @@ import { SkipOption } from './skipType';
 import { StepOption } from './step';
 import { PermitCheckOption } from './permitCheck';
 
+// Props interfaces for various components used in the project
+
 export interface CheckboxProps {
   id: number;
   title: string;

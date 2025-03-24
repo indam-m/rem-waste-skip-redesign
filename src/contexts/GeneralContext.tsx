@@ -4,6 +4,7 @@ import { GeneralContextInterface, WasteInput } from '../types/context';
 import { BasicPropsWithChildren } from '../types/props';
 import { SkipOption } from '../types/skipType';
 
+// initial value of the general context
 const initialValue: GeneralContextInterface = {
   wasteInput: {
     selectedSkipID: 0,

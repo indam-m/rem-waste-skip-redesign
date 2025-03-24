@@ -1,3 +1,4 @@
+// StepEnum defines the steps in the multi-step process
 export enum StepEnum {
   STEP_POST_CODE,
   STEP_WASTE_TYPE,
@@ -7,6 +8,7 @@ export enum StepEnum {
   STEP_PAYMENT,
 }
 
+// WasteTypeEnum defines the waste types
 export enum WasteTypeEnum {
   HOUSEHOLD_WASTE = 1,
   CONSTRUCTION_WASTE,

@@ -1,6 +1,7 @@
 import { Home, Truck } from 'lucide-react';
 import { PermitCheckOption } from '../types/permitCheck';
 
+// PERMIT_CHECK_LIST defines the available options for permit checks
 export const PERMIT_CHECK_LIST: PermitCheckOption[] = [
   {
     id: 1,

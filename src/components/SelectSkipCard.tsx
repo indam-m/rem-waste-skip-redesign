@@ -21,12 +21,13 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
   let className =
     'group relative rounded-lg border-2 p-4 md:p-6 transition-all text-white ';
   if (disabled) {
+    // additional classes for disabled cards
     className +=
       'animate-fadeIn-50 border-[#2A2A2A] opacity-50 bg-[#1C1C1C] cursor-not-allowed';
   } else {
     className += selected
-      ? 'animate-fadeIn border-[#0037C1] bg-[#0037C1]/10 cursor-pointer'
-      : 'animate-fadeIn border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] cursor-pointer';
+      ? 'animate-fadeIn border-[#0037C1] bg-[#0037C1]/10 cursor-pointer' // additional classes for selected card
+      : 'animate-fadeIn border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] cursor-pointer'; // additional classes for unselected card
   }
 
   // functions

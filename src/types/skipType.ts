@@ -1,3 +1,6 @@
+// SkipOption interface based on data provided in REST API
+// This interface represents the structure of a skip option object
+// received from the backend API.
 export interface SkipOption {
   id: number;
   size: number;

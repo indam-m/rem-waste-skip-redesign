@@ -47,6 +47,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
     ),
   );
 
+  // render info for mobile view
   const smallViewChildren = (
     <>
       <span className="text-sm font-bold text-gray-400">Selected:</span>

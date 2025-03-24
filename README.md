@@ -14,8 +14,9 @@ This project is a redesigned version of the “Skip Select” page provided by R
 
 - **React (TypeScript)** - For building a robust, type-safe UI.
 - **TailwindCSS** - For fast, responsive, and modern styling. And also to implement the existing styling.
+- **Lucide Icons** - Used for icons to maintain consistency with the original design.
 - **useReducer** - For managing state of data fetched from the REST API.
-- **Context API** - For managing global state like the input and the current step.
+- **Context API (`useContext`)** - For managing global state like the input and the current step.
 - **Vite (Development Tool)** - For fast React development.
 
 ---

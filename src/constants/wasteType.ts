@@ -1,6 +1,7 @@
 import { Home, Building2, Trees, Building } from 'lucide-react';
 import { WasteTypeEnum } from '../types/enum';
 
+// WASTE_TYPE_INFO provides information about waste types
 export const WASTE_TYPE_INFO = {
   title:
     'You can select multiple waste types. Some items may require special handling:',
@@ -10,6 +11,7 @@ export const WASTE_TYPE_INFO = {
   ],
 };
 
+// WASTE_TYPE_OPTIONS defines the available waste type options
 export const WASTE_TYPE_OPTIONS = [
   {
     id: WasteTypeEnum.HOUSEHOLD_WASTE,
