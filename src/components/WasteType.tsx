@@ -4,16 +4,19 @@ import {
   WASTE_TYPE_INFO,
   WASTE_TYPE_OPTIONS,
 } from '../constants/wasteType';
+import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
 import CheckBoxCard from './UI/CheckboxCard';
 import DefaultBottom from './UI/DefaultBottom';
 import InfoCard from './UI/InfoCard';
-import MainContent from './UI/MainContent';
 
 const WasteType: FC<DefaultContentProps> = ({
   onBack,
   onContinue,
 }): JSX.Element => {
+  // context
+  const generalCtx = useGeneralContext();
+
   // states
   const [checkedMap, setCheckedMap] = useState(
     Object.values(WasteTypeEnum).reduce(
@@ -24,17 +27,29 @@ const WasteType: FC<DefaultContentProps> = ({
       {} as Record<WasteTypeEnum, boolean>,
     ),
   );
-  const [isContinueDisabled, setIsContinueDisabled] = useState(true);
 
   // functions
-  const checkContinueDisabled = () => {
-    const isDisabled = Object.values(checkedMap).every((value) => !value);
-    setIsContinueDisabled(isDisabled);
-  };
-  const handleCheck = (index: WasteTypeEnum) => {
+  const handleCheck = (id: WasteTypeEnum) => {
+    // set checked map
     let newCheckedMap = { ...checkedMap };
-    newCheckedMap[index] = !newCheckedMap[index];
+    newCheckedMap[id] = !newCheckedMap[id];
     setCheckedMap(newCheckedMap);
+
+    // set waste types context
+    let newSelectedWasteTypes = [] as number[];
+    if (newCheckedMap[id]) {
+      newSelectedWasteTypes = generalCtx.wasteInput.selectedWasteTypes.concat([
+        id,
+      ]);
+    } else {
+      newSelectedWasteTypes = generalCtx.wasteInput.selectedWasteTypes.filter(
+        (val) => val !== id,
+      );
+    }
+    generalCtx.setWasteInput({
+      ...generalCtx.wasteInput,
+      selectedWasteTypes: newSelectedWasteTypes,
+    });
   };
   const handleBack = () => {
     onBack();
@@ -43,10 +58,11 @@ const WasteType: FC<DefaultContentProps> = ({
     onContinue();
   };
 
-  //   checkContinueDisabled();
-
   return (
-    <MainContent className="max-w-5xl mx-auto" title={WASTE_TYPE_INFO.title}>
+    <div className="max-w-5xl mx-auto">
+      <h2 className="text-2xl font-bold text-center mb-8">
+        Which type of waste best describes what you are disposing of?
+      </h2>
       <InfoCard
         title={WASTE_TYPE_INFO.title}
         description={WASTE_TYPE_INFO.description}
@@ -68,11 +84,11 @@ const WasteType: FC<DefaultContentProps> = ({
         ))}
       </div>
       <DefaultBottom
-        isContinueDisabled={isContinueDisabled}
+        isContinueDisabled={!generalCtx.wasteInput.selectedWasteTypes?.length}
         onBack={handleBack}
         onContinue={handleContinue}
       />
-    </MainContent>
+    </div>
   );
 };
 

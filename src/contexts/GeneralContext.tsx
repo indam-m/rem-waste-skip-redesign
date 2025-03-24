@@ -2,9 +2,14 @@ import React, { createContext, useContext, useState } from 'react';
 import { DEFAULT_STEP } from '../constants/step';
 import { GeneralContextInterface, WasteInput } from '../types/context';
 import { BasicPropsWithChildren } from '../types/props';
+import { SkipOption } from '../types/skipType';
 
 const initialValue: GeneralContextInterface = {
-  wasteInput: {} as WasteInput,
+  wasteInput: {
+    selectedSkipID: 0,
+    selectedSkipObj: {} as SkipOption,
+    selectedWasteTypes: [],
+  } as WasteInput,
   currentStep: DEFAULT_STEP,
   loading: false,
   currency: '£',

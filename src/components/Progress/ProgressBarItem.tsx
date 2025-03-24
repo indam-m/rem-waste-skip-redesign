@@ -26,7 +26,7 @@ const ProgressBarItem: FC<ProgressBarItemProps> = ({
         }`}
         onClick={onClick}
       >
-        <Icon />
+        <Icon className="w-6 h-6" />
         <span className="ml-2 text-white">{name}</span>
       </button>
     </>

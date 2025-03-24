@@ -33,14 +33,14 @@ export const WASTE_TYPE_OPTIONS = [
     id: WasteTypeEnum.CONSTRUCTION_WASTE,
     title: 'Construction Waste',
     subtitle: 'Building materials and renovation debris',
-    exampleList: ['Bricks', 'Timber', 'Concrete', 'Plasterboard'],
+    exampleList: ['Bricks', 'Concrete', 'Timber', 'Plasterboard'],
     icon: Building2,
   },
   {
     id: WasteTypeEnum.GARDEN_WASTE,
     title: 'Garden Waste',
     subtitle: 'Green waste and landscaping materials',
-    exampleList: ['Soil', 'Branches', 'Plants', 'Grass cuttings'],
+    exampleList: ['Soil', 'Plants', 'Branches', 'Grass cuttings'],
     icon: Trees,
   },
   {
@@ -49,8 +49,8 @@ export const WASTE_TYPE_OPTIONS = [
     subtitle: 'Business and office clearance',
     exampleList: [
       'Office furniture',
-      'Shop fittings',
       'Equipment',
+      'Shop fittings',
       'Commercial debris',
     ],
     icon: Building,

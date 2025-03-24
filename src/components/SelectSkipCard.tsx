@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowRight } from 'lucide-react';
+import { AlertTriangle, ArrowRight, Check } from 'lucide-react';
 import { FC, JSX } from 'react';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { SelectSkipCardProps } from '../types/props';
@@ -24,7 +24,7 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
     className += 'border-[#2A2A2A] opacity-50 bg-[#1C1C1C] cursor-not-allowed';
   } else {
     className += selected
-      ? 'border-[#0037C1] bg-[#0037C1]/10'
+      ? 'border-[#0037C1] bg-[#0037C1]/10 cursor-pointer'
       : 'border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] cursor-pointer';
   }
 
@@ -83,9 +83,17 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
 
   return (
     <div className={className} onClick={handleSelect}>
-      <div className="absolute top-3 right-3 md:top-4 md:right-4"></div>
+      {selected && (
+        <div className="absolute top-3 right-3 md:top-4 md:right-4">
+          <Check className="w-5 h-5 md:w-6 md:h-6 text-[#0037C1]" />
+        </div>
+      )}
       <div className="relative">
-        <img src={image} />
+        <img
+          src={image}
+          alt={`${skipOption.size} Yard Skip`}
+          className="w-full h-36 md:h-48 object-cover rounded-md mb-4"
+        />
         {imageInfo}
       </div>
       {description}

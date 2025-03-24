@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import ProgressBar from './components/Progress/ProgressBar';
 import {
   MAX_STEP_ALLOWED,
@@ -5,7 +6,7 @@ import {
   StepEnum,
   STEP_OPTIONS,
 } from './constants/step';
-import { GeneralProvider, useGeneralContext } from './contexts/GeneralContext';
+import { useGeneralContext } from './contexts/GeneralContext';
 import WasteType from './components/WasteType';
 import SelectSkip from './components/SelectSkip';
 
@@ -29,27 +30,31 @@ const App = () => {
       return;
     }
     generalCtx.setCurrentStep(generalCtx.currentStep - 1);
-    currentContent = getContent(generalCtx.currentStep);
   };
   const handleContinue = () => {
     if (generalCtx.currentStep === MAX_STEP_ALLOWED) {
       return;
     }
     generalCtx.setCurrentStep(generalCtx.currentStep + 1);
-    currentContent = getContent(generalCtx.currentStep);
   };
 
-  let currentContent = getContent(generalCtx.currentStep);
+  // states
+  const [currentContent, setCurrentContent] = useState(
+    getContent(generalCtx.currentStep),
+  );
+
+  // effect
+  useEffect(() => {
+    setCurrentContent(getContent(generalCtx.currentStep));
+  }, [generalCtx.currentStep]);
 
   return (
-    <GeneralProvider>
-      <div className="min-h-screen bg-[#121212] text-white">
-        <main className="max-w-7xl mx-auto px-4 py-8">
-          <ProgressBar progressSteps={STEP_OPTIONS} />
-          {currentContent}
-        </main>
-      </div>
-    </GeneralProvider>
+    <div className="min-h-screen bg-[#121212] text-white">
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <ProgressBar progressSteps={STEP_OPTIONS} />
+        {currentContent}
+      </main>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react';
 import { FC, JSX } from 'react';
 import { DefaultBottomProps } from '../../types/props';
 
@@ -23,7 +22,6 @@ const DefaultBottom: FC<DefaultBottomProps> = ({
         onClick={onContinue}
       >
         Continue
-        <ArrowRight className="w-4 h-4" />
       </button>
     </div>
   );

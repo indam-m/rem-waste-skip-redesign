@@ -1,6 +1,5 @@
 import { FC, JSX, useEffect } from 'react';
 import FixedBottom from './UI/FixedBottom';
-import MainContent from './UI/MainContent';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
 import { SkipOption } from '../types/skipType';
@@ -14,9 +13,11 @@ const SelectSkip: FC<DefaultContentProps> = ({
 }): JSX.Element => {
   // context
   const generalCtx = useGeneralContext();
+
   // states
   const { data: skipOptions, isLoading, error } = useFetchSkips();
 
+  // effect
   useEffect(() => {
     if (isLoading) {
       generalCtx.setLoading(true);
@@ -25,6 +26,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
     }
   }, [isLoading]);
 
+  // functions
   const handleSelect = (skipObj: SkipOption) => {
     generalCtx.setWasteInput({
       ...generalCtx.wasteInput,
@@ -44,10 +46,10 @@ const SelectSkip: FC<DefaultContentProps> = ({
   );
 
   return (
-    <MainContent
-      className="max-w-7xl mx-auto px-4 pb-32"
-      title="Choose Your Skip Size"
-    >
+    <div className="max-w-7xl mx-auto px-4 pb-32">
+      <h2 className="text-2xl font-bold text-center mb-4">
+        Choose Your Skip Size
+      </h2>
       <p className="text-gray-400 text-center mb-8">
         Select the skip size that best suits your needs
       </p>
@@ -69,10 +71,12 @@ const SelectSkip: FC<DefaultContentProps> = ({
           onBack={onBack}
           onContinue={onContinue}
         >
-          <div>
+          <div className="flex items-center gap-6">
             <p className="text-sm text-gray-400">
               {generalCtx.wasteInput.selectedSkipObj.size}
             </p>
+          </div>
+          <div>
             <span className="text-2xl font-bold text-[#0037C1]">
               {generalCtx.currency}
             </span>
@@ -82,7 +86,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
           </div>
         </FixedBottom>
       )}
-    </MainContent>
+    </div>
   );
 };
 

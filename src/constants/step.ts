@@ -11,7 +11,7 @@ import {
 import { StepOption } from '../types/step';
 
 export enum StepEnum {
-  STEP_POST_CODE = 1,
+  STEP_POST_CODE,
   STEP_WASTE_TYPE,
   STEP_SELECT_SKIP,
   STEP_PERMIT_CHECK,

@@ -1,5 +1,7 @@
+import { FC } from 'react';
+
 export interface StepOption {
   id: number;
   name: string;
-  icon: React.ComponentType;
+  icon: FC<{ className: string }>;
 }
