@@ -6,7 +6,7 @@ This project is a redesigned version of the “Skip Select” page provided by R
 
 ### 🌐 Live Demo
 
-[Live Demo on Vercel](https://rem-waste-skip-redesign-3fqg7wa3p-indams-projects.vercel.app/)
+[Live Demo on Vercel](https://rem-waste-skip-redesign.vercel.app/)
 
 ---
 
