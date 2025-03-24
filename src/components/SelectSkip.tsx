@@ -45,6 +45,20 @@ const SelectSkip: FC<DefaultContentProps> = ({
     ),
   );
 
+  const smallViewChildren = (
+    <>
+      <h3 className="font-medium"></h3>
+      <div>
+        <span className="text-xl font-bold text-[#0037C1]">
+          {generalCtx.currency}
+        </span>
+        <span className="text-sm text-gray-400 ml-2">
+          {generalCtx.wasteInput.selectedSkipObj.hire_period_days} days
+        </span>
+      </div>
+    </>
+  );
+
   return (
     <div className="max-w-7xl mx-auto px-4 pb-32">
       <h2 className="text-2xl font-bold text-center mb-4">
@@ -68,6 +82,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
         <FixedBottom
           isBackDisabled={false}
           isContinueDisabled={false}
+          smallViewChildren={smallViewChildren}
           onBack={onBack}
           onContinue={onContinue}
         >

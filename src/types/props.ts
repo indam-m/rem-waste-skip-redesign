@@ -34,7 +34,9 @@ export interface ErrorCardProps {
 
 export interface FixedBottomProps
   extends DefaultBottomProps,
-    BasicPropsWithChildren {}
+    BasicPropsWithChildren {
+  smallViewChildren: React.ReactNode;
+}
 
 export interface InfoCardProps {
   title: string;
