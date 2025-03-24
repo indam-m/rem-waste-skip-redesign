@@ -12,7 +12,6 @@ This project is a redesigned version of the “Skip Select” page provided by R
 - **TailwindCSS** - For fast, responsive, and modern styling. And also to implement the existing styling.
 - **useReducer** - For managing state of data fetched from the REST API.
 - **Context API** - For managing global state like the input and the current step.
-- **React Testing Library & Jest (Optional)** - For ensuring UI components render correctly (if time allows).
 - **Vite (Development Tool)** - For fast React development.
 
 ---
@@ -20,14 +19,17 @@ This project is a redesigned version of the “Skip Select” page provided by R
 ## 📁 Folder Structure
 
 ```
+/public               # Documents accessible publicly
 /src
-├── /components       # React components (SkipList, SkipCard, Stepper, etc.)
+├── /assets           # List of assets (images, icons, etc.)
+├── /components       # React components
 ├── /constants        # List of constants
 ├── /contexts         # Context Providers for managing global state
 ├── /hooks            # Custom hooks (e.g., useFetchSkips)
 ├── /types            # TypeScript interfaces and enums
 ├── App.tsx           # Main app file
-├── index.tsx         # ReactDOM rendering
+├── index.css         # Main CSS style
+├── main.tsx          # ReactDOM rendering
 ```
 
 ---
@@ -54,6 +56,7 @@ This project is a redesigned version of the “Skip Select” page provided by R
 
   - Display of skip options based on API data.
   - Improved grammar consistency (e.g., “4-yard skip”, “14-day hire”) for readability.
+  - Refined Bottom Bar for Improved User Experience.
 
 - **Accessibility Considerations:**
   - Improving readability for screen readers.
@@ -79,17 +82,6 @@ This project is a redesigned version of the “Skip Select” page provided by R
 
 ```bash
   npm run dev
-```
-
----
-
-## 📌 Testing (If Implemented)
-
-- Tests are written using **Jest & React Testing Library**.
-- To run tests:
-
-```bash
-  npm run test
 ```
 
 ---
