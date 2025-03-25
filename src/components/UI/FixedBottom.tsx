@@ -19,14 +19,14 @@ const FixedBottom: FC<FixedBottomProps> = ({
           </div>
           <div className="grid grid-cols-2 gap-3">
             <button
-              className="btn-secondary w-full"
+              className="btn-secondary w-full transition-colors duration-300"
               disabled={isBackDisabled}
               onClick={onBack}
             >
               Back
             </button>
             <button
-              className={`btn-primary w-full${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+              className={`btn-primary w-full transition-colors duration-300${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
               disabled={isContinueDisabled}
               onClick={onContinue}
             >
@@ -38,7 +38,7 @@ const FixedBottom: FC<FixedBottomProps> = ({
           <div className="flex items-center gap-6">{children}</div>
           <div className="flex items-center gap-4">
             <button
-              className="min-w-[120px] btn-secondary flex items-center gap-4"
+              className="min-w-[120px] btn-secondary flex items-center gap-4 transition-colors duration-300"
               disabled={isBackDisabled}
               onClick={onBack}
             >
@@ -46,7 +46,7 @@ const FixedBottom: FC<FixedBottomProps> = ({
               Back
             </button>
             <button
-              className={`min-w-[120px] btn-primary flex items-center gap-2${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+              className={`min-w-[120px] btn-primary flex items-center gap-2 transition-colors duration-300${isContinueDisabled ? ' opacity-50 cursor-not-allowed' : ''}`}
               disabled={isContinueDisabled}
               onClick={onContinue}
             >

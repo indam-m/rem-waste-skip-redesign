@@ -2,15 +2,13 @@ import { AlertTriangle, ArrowRight, Check } from 'lucide-react';
 import { FC, JSX } from 'react';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { SelectSkipCardProps } from '../types/props';
-
-const DEFAULT_IMAGE_URL =
-  'https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=800';
+import SkipDefault from '../assets/skip_default.png';
 
 const SelectSkipCard: FC<SelectSkipCardProps> = ({
   skipOption,
   selectedButtonWord = 'Selected',
   selectButtonWord = 'Select This Skip',
-  image = DEFAULT_IMAGE_URL,
+  image = SkipDefault,
   selected,
   onSelect,
 }): JSX.Element => {
@@ -27,7 +25,7 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
   } else {
     className += selected
       ? 'animate-fadeIn border-[#0037C1] bg-[#0037C1]/10 cursor-pointer' // additional classes for selected card
-      : 'animate-fadeIn border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] cursor-pointer'; // additional classes for unselected card
+      : 'animate-fadeIn border-[#2A2A2A] hover:bg-[#0037C1]/5 hover:border-[#0037C1]/50 bg-[#1C1C1C] transition-all duration-300 cursor-pointer'; // additional classes for unselected card
   }
 
   // functions
@@ -101,11 +99,17 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
       {description}
       <button
         className={`w-full py-2.5 md:py-3 px-4 rounded-md transition-all flex items-center justify-center space-x-2 text-white
-            ${selected ? 'bg-[#0037C1] hover:bg-[#002da1]' : 'bg-[#2A2A2A] hover:bg-[#3A3A3A] hover:border-[#0037C1]'}${disabled ? ' opacity-50 cursor-not-allowed' : ''}`}
+            ${selected ? 'bg-[#0037C1] hover:bg-[#002da1]' : 'bg-[#2A2A2A] hover:bg-[#3A3A3A] hover:border-[#0037C1] transition-all duration-300'}${disabled ? ' opacity-50 cursor-not-allowed' : ''}`}
         disabled={disabled}
       >
-        <span>{selected ? selectedButtonWord : selectButtonWord}</span>
-        {!selected && <ArrowRight className="w-4 h-4" />}
+        <span>
+          {selected
+            ? selectedButtonWord
+            : !disabled
+              ? selectButtonWord
+              : 'Skip Unavailable'}
+        </span>
+        {!selected && !disabled && <ArrowRight className="w-4 h-4" />}
       </button>
     </div>
   );

@@ -21,7 +21,7 @@ const ProgressBarItem: FC<ProgressBarItemProps> = ({
         disabled={step > generalCtx.currentStep}
         className={`flex items-center whitespace-nowrap transition-colors ${
           step <= generalCtx.currentStep
-            ? 'text-[#0037C1] cursor-pointer hover:text-[#0037C1]'
+            ? 'text-[#0037C1] cursor-pointer opacity-100 transition-opacity duration-300 hover:opacity-60'
             : 'text-white/60 cursor-not-allowed opacity-50'
         }`}
         onClick={onClick}

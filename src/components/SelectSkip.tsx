@@ -65,7 +65,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pb-32">
+    <div className="max-w-7xl mx-auto px-4 pb-32 pt-12">
       <ContentTitle title="Choose Your Skip Size" />
       <p className="text-gray-400 text-center mb-8">
         Select the skip size that best suits your needs.
