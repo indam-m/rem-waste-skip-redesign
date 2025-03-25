@@ -1,17 +1,17 @@
 import { AlertTriangle, ArrowRight, Check } from 'lucide-react';
-import { FC, JSX } from 'react';
+import React from 'react';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { SelectSkipCardProps } from '../types/props';
 import SkipDefault from '../assets/skip_default.png';
 
-const SelectSkipCard: FC<SelectSkipCardProps> = ({
+const SelectSkipCard: React.FC<SelectSkipCardProps> = ({
   skipOption,
   selectedButtonWord = 'Selected',
   selectButtonWord = 'Select This Skip',
   image = SkipDefault,
   selected,
   onSelect,
-}): JSX.Element => {
+}): React.JSX.Element => {
   // variables
   const generalCtx = useGeneralContext();
   const disabled = !skipOption.allows_heavy_waste;
@@ -82,7 +82,11 @@ const SelectSkipCard: FC<SelectSkipCardProps> = ({
   );
 
   return (
-    <div className={className} onClick={handleSelect}>
+    <div
+      data-testid={`skip-card-${skipOption.id}`}
+      className={className}
+      onClick={handleSelect}
+    >
       {selected && (
         <div className="absolute top-3 right-3 md:top-4 md:right-4">
           <Check className="w-5 h-5 md:w-6 md:h-6 text-[#0037C1]" />

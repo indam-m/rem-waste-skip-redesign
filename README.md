@@ -17,6 +17,7 @@ This project is a redesigned version of the “Skip Select” page provided by R
 - **Lucide Icons** - Used for icons to maintain consistency with the original design.
 - **useReducer** - For managing state of data fetched from the REST API.
 - **Context API (`useContext`)** - For managing global state like the input and the current step.
+- **React Testing Library & Jest** - For ensuring UI components render correctly.
 - **Vite (Development Tool)** - For fast React development.
 
 ---
@@ -87,6 +88,17 @@ This project is a redesigned version of the “Skip Select” page provided by R
 
 ```bash
   npm run dev
+```
+
+---
+
+## 📌 Testing
+
+- Tests are written using **Jest & React Testing Library**.
+- To run tests:
+
+```bash
+  npm run test
 ```
 
 ---
