@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'; // necessary for testing and building
 import { render, screen } from '@testing-library/react';
 import SelectSkipCard from '../SelectSkipCard';
 import '@testing-library/jest-dom';
@@ -33,7 +32,7 @@ describe('SelectSkipCard Component', () => {
     expect(cardElement).toHaveClass('cursor-not-allowed');
   });
 
-  test('renders skip cards correctly when data is fetched', async () => {
+  test('renders skip cards correctly', async () => {
     const skipOption = {
       id: 1,
       size: 8,

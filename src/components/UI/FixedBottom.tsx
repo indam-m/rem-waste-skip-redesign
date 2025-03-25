@@ -1,15 +1,15 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { FC, JSX } from 'react';
+import React from 'react';
 import { FixedBottomProps } from '../../types/props';
 
-const FixedBottom: FC<FixedBottomProps> = ({
+const FixedBottom: React.FC<FixedBottomProps> = ({
   children,
   smallViewChildren,
   isBackDisabled,
   isContinueDisabled,
   onBack,
   onContinue,
-}): JSX.Element => {
+}): React.JSX.Element => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
       <div className="max-w-7xl mx-auto">

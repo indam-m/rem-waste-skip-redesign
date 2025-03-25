@@ -20,7 +20,7 @@ const initialValue: GeneralContextInterface = {
   setWasteInput: () => {},
 };
 
-const GeneralContext = createContext<GeneralContextInterface>({
+export const GeneralContext = createContext<GeneralContextInterface>({
   ...initialValue,
 });
 

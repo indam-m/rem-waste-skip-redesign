@@ -1,4 +1,4 @@
-import { FC, JSX, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import FixedBottom from './UI/FixedBottom';
 import { useGeneralContext } from '../contexts/GeneralContext';
 import { DefaultContentProps } from '../types/props';
@@ -9,10 +9,10 @@ import ErrorCard from './UI/ErrorCard';
 import LoadingCircle from './UI/LoadingCircle';
 import SelectSkipCard from './SelectSkipCard';
 
-const SelectSkip: FC<DefaultContentProps> = ({
+const SelectSkip: React.FC<DefaultContentProps> = ({
   onBack,
   onContinue,
-}): JSX.Element => {
+}): React.JSX.Element => {
   // context
   const generalCtx = useGeneralContext();
 
@@ -36,7 +36,7 @@ const SelectSkip: FC<DefaultContentProps> = ({
     });
   };
 
-  const skipOptionJSXs: JSX.Element[] = skipOptions.map(
+  const skipOptionJSXs: React.JSX.Element[] = skipOptions.map(
     (skipOption: SkipOption, index: number) => (
       <SelectSkipCard
         key={index}

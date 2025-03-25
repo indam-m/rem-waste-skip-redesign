@@ -11,7 +11,7 @@ const fetchSkipReducer = (state: FetchSkipState, action: any) => {
       return { ...state, isLoading: true, error: null };
     case 'FETCH_SUCCESS':
       return { ...state, isLoading: false, data: action.payload };
-    case 'FETCH_FAILURE':
+    case 'FETCH_ERROR':
       return { ...state, isLoading: false, error: action.payload };
     default:
       throw new Error(`Unsupported action type ${action.type}`);

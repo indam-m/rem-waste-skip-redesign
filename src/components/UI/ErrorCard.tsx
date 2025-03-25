@@ -1,8 +1,11 @@
 import { AlertTriangle } from 'lucide-react';
-import { FC, JSX } from 'react';
+import React from 'react';
 import { ErrorCardProps } from '../../types/props';
 
-const ErrorCard: FC<ErrorCardProps> = ({ error, onTryAgain }): JSX.Element => {
+const ErrorCard: React.FC<ErrorCardProps> = ({
+  error,
+  onTryAgain,
+}): React.JSX.Element => {
   return (
     <div
       className="max-w-xl mx-auto mb-8 p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
